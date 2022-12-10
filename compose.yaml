@@ -1,0 +1,17 @@
+networks:
+  my_network:
+  
+services:
+  service1:
+    image: demo001:latest
+    networks:
+      - my_network
+    ports:
+      - 8882:8880
+
+  service2:
+    image: demo001:latest
+    networks:
+      - my_network
+    ports:
+      - 8883:8880
