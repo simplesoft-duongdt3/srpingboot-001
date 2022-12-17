@@ -16,6 +16,12 @@ docker images
 docker run demo001:0.0.1
 docker ps
 docker exec -it [container-id] bash
+
+docker exec -it d3de684f9453 bash
+
+
+
+echo "$(cat default.conf)"
 curl http://localhost:8880/demo
 
 ### Run with publish port

@@ -1,0 +1,1 @@
+docker build -t nginx_load_balancer .

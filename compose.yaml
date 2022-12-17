@@ -15,3 +15,13 @@ services:
       - my_network
     ports:
       - 8883:8880
+
+  nginx_load_balancer:
+    image: nginx_load_balancer:latest
+    networks:
+      - my_network
+    ports:
+      - 8888:80
+    depends_on:
+      - service1
+      - service2
