@@ -7,5 +7,5 @@ docker compose down
 gcloud auth login
 gcloud auth configure-docker
 
-docker tag demo001:latest gcr.io/pelagic-program-372001/demo001:latest
-docker push gcr.io/pelagic-program-372001/demo001:latest
+docker tag demo001:latest asia.gcr.io/[project_id]/demo001:latest
+docker push asia.gcr.io/[project_id]/demo001:latest
