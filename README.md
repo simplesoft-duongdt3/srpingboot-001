@@ -3,7 +3,7 @@ docker compose up -d
 docker compose down
 
 
-# config Google Repository
+# push image into Google Repository
 gcloud auth login
 gcloud auth configure-docker
 
@@ -15,3 +15,6 @@ docker-credential-gcr configure-docker
 docker pull asia.gcr.io/[project_id]/demo001:latest
 
 # example project_id = pelagic-program-372001
+
+docker pull asia.gcr.io/pelagic-program-372001/nginx_static_amd64:latest
+
