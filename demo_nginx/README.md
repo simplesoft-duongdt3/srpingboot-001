@@ -1,8 +1,8 @@
-firewall
-iptables
+# build image
+docker build -t nginx_static_amd64 .
 
-Develop
-npm start ???
+# build image with buildx --platform=linux/amd64
+docker buildx build --platform=linux/amd64 -t nginx_static_amd64 .
 
-Production
-npm build  (scss, typescript) -> folder (static files, js, html, css) -> nginx
+
+
