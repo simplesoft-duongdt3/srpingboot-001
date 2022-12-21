@@ -8,6 +8,8 @@ services:
       - my_network
     ports:
       - 8882:8880
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
 
   service2:
     image: demo001:latest
@@ -15,6 +17,8 @@ services:
       - my_network
     ports:
       - 8883:8880
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
 
   nginx_load_balancer:
     image: nginx_load_balancer:latest
