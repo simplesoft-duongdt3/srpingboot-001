@@ -11,7 +11,8 @@ services:
       - redis_network
     ports:
       - '6379:6379'
-    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    command: redis-server --save 20 1 --loglevel warning
+    # command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
     volumes: 
       - cache:/data
       # - $PWD/cache:/data
@@ -24,7 +25,8 @@ services:
     depends_on:
       - redis-service
     environment:
-      - REDIS_HOSTS=local:redis-host:6379:0:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+      # - REDIS_HOSTS=local:redis-host:6379:0:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+      - REDIS_HOSTS=local:redis-host:6379
     ports:
       - "9999:8081"
     networks:
