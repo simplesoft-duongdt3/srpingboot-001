@@ -1,0 +1,52 @@
+networks:
+  redis_network:
+  
+services:
+  redis-service:
+    container_name: redis-container
+    hostname: redis-host
+    image: redis:latest
+    restart: always
+    networks:
+      - redis_network
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning
+    # command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes: 
+      - cache:/data
+      # - $PWD/cache:/data
+
+  redis-commander-service:
+    container_name: redis-commander-container
+    hostname: redis-commander-host
+    image: rediscommander/redis-commander:latest
+    restart: always
+    depends_on:
+      - redis-service
+    environment:
+      # - REDIS_HOSTS=local:redis-host:6379:0:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+      - REDIS_HOSTS=local:redis-host:6379
+    ports:
+      - "9999:8081"
+    networks:
+      - redis_network
+
+  short-url-dart-server-service:
+    container_name: short-url-dart-server-container
+    hostname: short-url-dart-server-host
+    image: short-url-dart-server:latest
+    restart: always
+    depends_on:
+      - redis-service
+    environment:
+      - REDIS_HOSTS=redis-host
+      - REDIS_PORT=6379
+    ports:
+      - "8989:8989"
+    networks:
+      - redis_network
+
+volumes:
+  cache:
+    driver: local

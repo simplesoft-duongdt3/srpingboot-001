@@ -1,11 +1,16 @@
 import 'package:redis/redis.dart';
+import 'dart:io' show Platform;
 
 class RedisClient {
   late Command _command;
 
   Future<void> init() async {
+    Map<String, String> envVars = Platform.environment;
+    var host = envVars['REDIS_HOSTS'] ?? 'localhost';
+    var port = int.parse(envVars['REDIS_PORT'] ?? '6379');
+
     final conn = RedisConnection();
-    _command = await conn.connect('localhost', 6379);
+    _command = await conn.connect(host, port);
   }
 
   Future<void> set(String key, String value) async {
