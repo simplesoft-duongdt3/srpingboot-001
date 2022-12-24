@@ -47,6 +47,23 @@ services:
     networks:
       - redis_network
 
+  short-url-spring-boot-service:
+    container_name: short-url-spring-boot-container
+    hostname: short-url-spring-boot-host
+    image: short-url-spring-boot-service:latest
+    restart: always
+    depends_on:
+      - redis-service
+    environment:
+      - REDIS_HOST=redis-host
+      - REDIS_PORT=6379
+      - REDIS_BD_INDEX=0
+      # - REDIS_PASS=eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    ports:
+      - "8889:8880"
+    networks:
+      - redis_network
+
 volumes:
   cache:
     driver: local
