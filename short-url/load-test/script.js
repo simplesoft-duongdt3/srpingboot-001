@@ -2,15 +2,14 @@ import http from 'k6/http';
 import { sleep } from 'k6';
 
 export const options = {
-  vus: 1000,
+  vus: 200,
   duration: '10s',
 };
 
 export default function () {
   let randomNumber = Math.random() * 100;
-
-  let myIp = "192.168.1.2";
-  http.get('http://' + myIp + ':8989/create-url?rawUrl=https://meet.google.com/sbv-jbwj-ugg' + randomNumber);
+  let myIp = "34.142.202.179";
+  http.get('http://' + myIp + ':9898/create-url?rawUrl=https://meet.google.com/sbv-jbwj-ugg' + randomNumber);
   sleep(1);
 }
 
