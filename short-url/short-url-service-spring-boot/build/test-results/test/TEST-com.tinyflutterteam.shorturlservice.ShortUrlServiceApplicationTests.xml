@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tinyflutterteam.shorturlservice.ShortUrlServiceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-24T06:10:14" hostname="iMac-cua-Doan.local" time="0.168">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.tinyflutterteam.shorturlservice.ShortUrlServiceApplicationTests" time="0.168"/>
+  <system-out><![CDATA[13:10:13.700 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ShortUrlServiceApplicationTests]: using SpringBootContextLoader
+13:10:13.704 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.tinyflutterteam.shorturlservice.ShortUrlServiceApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+13:10:13.705 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.tinyflutterteam.shorturlservice.ShortUrlServiceApplicationTests]: ShortUrlServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:10:13.717 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [ShortUrlServiceApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+13:10:13.752 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/doanthanhduong/Documents/GitHubProjects/srpingboot-001/short-url/short-url-service-spring-boot/build/classes/java/main/com/tinyflutterteam/shorturlservice/ShortUrlServiceApplication.class]
+13:10:13.753 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.tinyflutterteam.shorturlservice.ShortUrlServiceApplication for test class com.tinyflutterteam.shorturlservice.ShortUrlServiceApplicationTests
+13:10:13.799 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [ShortUrlServiceApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, WithSecurityContextTestExecutionListener, EventPublishingTestExecutionListener, ReactorContextTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+13:10:13.800 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [ShortUrlServiceApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.1)
+
+2022-12-24T13:10:13.921+07:00  INFO 8853 --- [    Test worker] c.t.s.ShortUrlServiceApplicationTests    : Starting ShortUrlServiceApplicationTests using Java 17.0.5 with PID 8853 (started by doanthanhduong in /Users/doanthanhduong/Documents/GitHubProjects/srpingboot-001/short-url/short-url-service-spring-boot)
+2022-12-24T13:10:13.922+07:00  INFO 8853 --- [    Test worker] c.t.s.ShortUrlServiceApplicationTests    : The following 1 profile is active: "dev"
+2022-12-24T13:10:14.187+07:00  INFO 8853 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2022-12-24T13:10:14.188+07:00  INFO 8853 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-12-24T13:10:14.202+07:00  INFO 8853 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2022-12-24T13:10:14.824+07:00  INFO 8853 --- [    Test worker] c.t.s.ShortUrlServiceApplicationTests    : Started ShortUrlServiceApplicationTests in 1.008 seconds (process running for 1.583)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
