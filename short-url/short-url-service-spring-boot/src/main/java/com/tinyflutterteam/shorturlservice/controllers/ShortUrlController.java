@@ -11,6 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/api/short-url")
 public class ShortUrlController {
 
     @Autowired
@@ -19,7 +20,7 @@ public class ShortUrlController {
     @Autowired
     private HashUtil hashUtil;
 
-    @PostMapping("/create-short-url")
+    @PostMapping("/create")
     CreateShortUrlResponse createShortUrl(@RequestBody CreateShortUrlRequest request) {
         String rawUrl = request.getRawUrl();
         if (rawUrl != null && !rawUrl.isBlank()) {

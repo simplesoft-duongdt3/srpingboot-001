@@ -6,6 +6,8 @@ services:
     container_name: redis-container
     hostname: redis-host
     image: redis:latest
+    healthcheck:
+      test: [ "CMD", "redis-cli", "--raw", "incr", "ping" ]
     restart: always
     networks:
       - redis_network
