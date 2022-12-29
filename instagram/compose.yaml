@@ -1,0 +1,30 @@
+networks:
+  instagram_network:
+  
+services:
+  instagram-upload-service:
+    container_name: instagram-upload-service-container
+    hostname: instagram-upload-service-host
+    image: instagram-upload-service:latest
+    restart: always
+    networks:
+      - instagram_network
+
+  instagram-api-service:
+    container_name: instagram-api-service-container
+    hostname: instagram-api-service-host
+    image: instagram-api-service:latest
+    restart: always
+    networks:
+      - instagram_network
+
+  nginx_instagram_gateway:
+    image: nginx_instagram_gateway:latest
+    restart: always
+    networks:
+      - instagram_network
+    ports:
+      - 9990:80
+    depends_on:
+      - instagram-upload-service
+      - instagram-api-service

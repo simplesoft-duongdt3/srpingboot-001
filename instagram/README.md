@@ -1,3 +1,15 @@
+# Test gateway
+
+docker compose up -d
+
+curl http://localhost:9990
+Response: Instagram API home page!
+
+
+curl -H "Content-Type: multipart/mixed" -F "request={"param1": "value1"};type=application/json" http://localhost:9990/upload
+content: {param1: value1}
+
+
 2. Requirements and Goals of the System
 We’ll focus on the following set of requirements while designing the Instagram:
 

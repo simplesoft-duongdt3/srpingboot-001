@@ -6,23 +6,16 @@ import 'package:shelf_multipart/form_data.dart';
 import 'package:shelf_multipart/multipart.dart';
 import 'package:shelf_router/shelf_router.dart';
 
-
 // dart-shelf-realworld-example
 // https://github.com/marcusmonteirodesouza/dart-shelf-realworld-example-app
 
 // Configure routes.
 final _router = Router()
   ..get('/', _rootHandler)
-  ..post('/upload', _uploadHandler)
-  ..get('/echo/<message>', _echoHandler);
+  ..post('/upload', _uploadHandler);
 
 Response _rootHandler(Request req) {
-  return Response.ok('Hello, World!\n');
-}
-
-Response _echoHandler(Request request) {
-  final message = request.params['message'];
-  return Response.ok('$message\n');
+  return Response.ok('Instagram Upload home page!\n');
 }
 
 Future<Response> _uploadHandler(Request request) async {
