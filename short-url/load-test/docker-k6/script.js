@@ -8,7 +8,13 @@ import { sleep } from 'k6';
 //   duration: '10s',
 // };
 
-let target_vus = 200
+const isNumeric = (value) => /^\d+$/.test(value);
+
+const default_vus = 200;
+
+const target_vus_env = `${__ENV.TARGET_VUS}`;
+const target_vus = isNumeric(target_vus_env) ? Number(target_vus_env) : default_vus;
+
 export let options = {
   stages: [
       // Ramp-up from 1 to TARGET_VUS virtual users (VUs) in 5s
