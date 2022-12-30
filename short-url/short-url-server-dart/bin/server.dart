@@ -17,8 +17,8 @@ String hashUrl(String url) {
 // Configure routes.
 final _router = Router()
   ..get('/', _rootHandler)
-  ..get('/create-url', _createShortUrlHandler)
-  ..get('/url', _getRawUrlHandler)
+  ..get('/api/short-url/create', _createShortUrlHandler)
+  ..get('/api/short-url/get-short-url', _getRawUrlHandler)
   ..get('/echo/<message>', _echoHandler);
 
 Response _rootHandler(Request req) {

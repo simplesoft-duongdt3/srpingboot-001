@@ -11,35 +11,35 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/short-url")
+//@RequestMapping("/api/short-url")
 public class ShortUrlController {
 
-    @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+     @Autowired
+     private RedisTemplate<String, String> redisTemplate;
 
-    @Autowired
-    private HashUtil hashUtil;
+     @Autowired
+     private HashUtil hashUtil;
 
-    @PostMapping("/create")
+    @PostMapping("/api/short-url/create")
     CreateShortUrlResponse createShortUrl(@RequestBody CreateShortUrlRequest request) {
-        String rawUrl = request.getRawUrl();
-        if (rawUrl != null && !rawUrl.isBlank()) {
-            String md5Hash = hashUtil.getMd5Hash(rawUrl);
-            // TODO add timeout here
-            redisTemplate.opsForValue().set(md5Hash, rawUrl);
-        }
+         String rawUrl = request.getRawUrl();
+         if (rawUrl != null && !rawUrl.isBlank()) {
+             String md5Hash = hashUtil.getMd5Hash(rawUrl);
+             // TODO add timeout here
+             redisTemplate.opsForValue().set(md5Hash, rawUrl);
+         }
 
         throw new CreateShortUrlNotFound();
     }
 
-    @GetMapping("/get-short-url")
+    @GetMapping("/api/short-url/get-short-url")
     GetShortUrlResponse createShortUrl(@RequestParam("shorten-url") String shortenUrl) {
-        if (shortenUrl != null && !shortenUrl.isBlank()) {
-            String rawUrl = redisTemplate.opsForValue().get(shortenUrl);
-            if (rawUrl != null && !rawUrl.isBlank()) {
-                return new GetShortUrlResponse(rawUrl);
-            }
-        }
+         if (shortenUrl != null && !shortenUrl.isBlank()) {
+             String rawUrl = redisTemplate.opsForValue().get(shortenUrl);
+             if (rawUrl != null && !rawUrl.isBlank()) {
+                 return new GetShortUrlResponse(rawUrl);
+             }
+         }
         throw new GetShortUrlNotFound();
     }
 }
