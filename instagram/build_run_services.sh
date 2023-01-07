@@ -12,6 +12,10 @@ cd instagram_upload_dart_service
 docker build -t instagram-upload-service .
 
 cd ..
+cd instagram_auth_dart_service
+docker build -t instagram-auth-service .
+
+cd ..
 cd ..
 
 docker compose down

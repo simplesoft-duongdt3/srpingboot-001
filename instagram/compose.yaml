@@ -18,6 +18,14 @@ services:
     networks:
       - instagram_network
 
+  instagram-auth-service:
+    container_name: instagram-auth-service-container
+    hostname: instagram-auth-service-host
+    image: instagram-auth-service:latest
+    restart: always
+    networks:
+      - instagram_network
+
   nginx_instagram_gateway:
     image: nginx_instagram_gateway:latest
     restart: always

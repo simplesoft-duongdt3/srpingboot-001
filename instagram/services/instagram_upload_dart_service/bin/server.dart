@@ -56,9 +56,10 @@ void main(List<String> args) async {
   final _handler = Pipeline().addMiddleware(logRequests()).addHandler(_router);
 
   // For running in containers, we respect the PORT environment variable.
-  final port = int.parse(Platform.environment['PORT'] ?? '9996');
+  final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final server = await serve(_handler, ip, port);
   print('Server listening on port ${server.port}');
   print('Test upload with below command');
-  print('curl -H "Content-Type: multipart/mixed" -F "request={"param1": "value1"};type=application/json" http://localhost:${server.port}/upload');
+  print('curl -X POST -H "Content-Type: multipart/mixed" -F "request={"param1": "value1"};type=application/json" http://localhost:${server.port}/upload');
 }
+
