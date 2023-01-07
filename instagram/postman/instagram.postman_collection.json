@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "34cf1251-9273-48f2-a01f-9d22debcd094",
+		"name": "instagram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20402014"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"user_name\":\"duong.doan\",\n    \"email\": \"x@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6969/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6969",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"user_name\":\"duong.doan\",\n    \"email\": \"x@gmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6969/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Dart with package:shelf"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 07 Jan 2023 12:42:54 GMT"
+						},
+						{
+							"key": "content-length",
+							"value": "0"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "content-type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"user_name\":\"duong.doan\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6969/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6969",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"user_name\":\"duong.doan\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6969/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Dart with package:shelf"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 07 Jan 2023 12:39:43 GMT"
+						},
+						{
+							"key": "content-length",
+							"value": "557"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkdW9uZy5kb2FuIiwicm9sZSI6InVzZXIiLCJ0dCI6InJlZnJlc2giLCJpYXQiOjE2NzMwOTUxODMsImV4cCI6MTY3NTY4NzE4MywianRpIjoiYWE4YjM0MTYtZjEyZC00NjZiLTg5NTktMGRkMWYyZDUwMTZjIn0.Is2NzqfT9QH5TciW3e-np6f9qAw2RR0zIUH89QXl5ZE\",\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkdW9uZy5kb2FuIiwicm9sZSI6InVzZXIiLCJ0dCI6ImFjY2VzcyIsImlhdCI6MTY3MzA5NTE4MywiZXhwIjoxNjczMDk2OTgzLCJqdGkiOiIzODM4YmJjMy1kMTlkLTRmYjAtOTYwMy0yY2MwYmYwZmNhNjIifQ.p9_B3tGTjbEp1d4K03JKrQMKAmZi2QXNAVNazuxbUBQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "refresh-token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkdW9uZy5kb2FuIiwicm9sZSI6InVzZXIiLCJ0dCI6InJlZnJlc2giLCJpYXQiOjE2NzMwOTUxODMsImV4cCI6MTY3NTY4NzE4MywianRpIjoiYWE4YjM0MTYtZjEyZC00NjZiLTg5NTktMGRkMWYyZDUwMTZjIn0.Is2NzqfT9QH5TciW3e-np6f9qAw2RR0zIUH89QXl5ZE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6969/auth/refresh-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6969",
+					"path": [
+						"auth",
+						"refresh-token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "refresh-token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkdW9uZy5kb2FuIiwicm9sZSI6InVzZXIiLCJ0dCI6InJlZnJlc2giLCJpYXQiOjE2NzMwOTUxODMsImV4cCI6MTY3NTY4NzE4MywianRpIjoiYWE4YjM0MTYtZjEyZC00NjZiLTg5NTktMGRkMWYyZDUwMTZjIn0.Is2NzqfT9QH5TciW3e-np6f9qAw2RR0zIUH89QXl5ZE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6969/auth/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Dart with package:shelf"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 07 Jan 2023 12:43:54 GMT"
+						},
+						{
+							"key": "content-length",
+							"value": "278"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkdW9uZy5kb2FuIiwicm9sZSI6InVzZXIiLCJ0dCI6ImFjY2VzcyIsImlhdCI6MTY3MzA5NTQzNCwiZXhwIjoxNjczMDk3MjM0LCJqdGkiOiIyMjNlNGJjYS05YzIxLTRlYjgtYjc5NS01MWRmZGRjMzM0MTkifQ.-Lkj-tnfq-xK7Ny7u3YTF7xkCGpgcFmRqmgdTJ6pPU0\"\n}"
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkdW9uZy5kb2FuIiwicm9sZSI6InVzZXIiLCJ0dCI6ImFjY2VzcyIsImlhdCI6MTY3MzA5NTIxNCwiZXhwIjoxNjczMDk3MDE0LCJqdGkiOiJhYTBlYjNjNi1kZmJlLTQ3NjMtODFjMC0zN2EzZTc2MWM2MjIifQ.gWggmZeqdNJ4uzDUveDe0jx2ub0lBdquXZ4djy7bN4U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:6969/auth/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6969",
+					"path": [
+						"auth",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJkdW9uZy5kb2FuIiwicm9sZSI6InVzZXIiLCJ0dCI6ImFjY2VzcyIsImlhdCI6MTY3MzA5NTIxNCwiZXhwIjoxNjczMDk3MDE0LCJqdGkiOiJhYTBlYjNjNi1kZmJlLTQ3NjMtODFjMC0zN2EzZTc2MWM2MjIifQ.gWggmZeqdNJ4uzDUveDe0jx2ub0lBdquXZ4djy7bN4U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:6969/auth/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6969",
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Dart with package:shelf"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 07 Jan 2023 12:44:06 GMT"
+						},
+						{
+							"key": "content-length",
+							"value": "13"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "content-type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "OK with token"
+				}
+			]
+		}
+	]
+}
