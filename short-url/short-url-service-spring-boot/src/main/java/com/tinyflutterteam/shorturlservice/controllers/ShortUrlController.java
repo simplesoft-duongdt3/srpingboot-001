@@ -24,9 +24,11 @@ public class ShortUrlController {
     CreateShortUrlResponse createShortUrl(@RequestBody CreateShortUrlRequest request) {
          String rawUrl = request.getRawUrl();
          if (rawUrl != null && !rawUrl.isBlank()) {
-             String md5Hash = hashUtil.getMd5Hash(rawUrl);
+             System.out.println("createShortUrl rawUrl = " + rawUrl);
+             String shortenUrl = hashUtil.getMd5Hash(rawUrl);
              // TODO add timeout here
-             redisTemplate.opsForValue().set(md5Hash, rawUrl);
+             redisTemplate.opsForValue().set(shortenUrl, rawUrl);
+             return new CreateShortUrlResponse(shortenUrl);
          }
 
         throw new CreateShortUrlNotFound();

@@ -27,7 +27,7 @@ public class RedisConfig {
 	}
 
     @Bean
-	public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory connectionFactory) {
+	public RedisTemplate<String, String> redisTemplate(LettuceConnectionFactory connectionFactory) {
 		RedisTemplate<String, String> template = new RedisTemplate<>();
 		template.setConnectionFactory(connectionFactory);
 		// Add some specific configuration here. Key serializers, etc.
@@ -35,7 +35,7 @@ public class RedisConfig {
 	}
 
 	@Bean
-	public RedisTemplate<Object, Object> redisTemplateObject(RedisConnectionFactory connectionFactory) {
+	public RedisTemplate<Object, Object> redisTemplateObject(LettuceConnectionFactory connectionFactory) {
 		RedisTemplate<Object, Object> template = new RedisTemplate<>();
 		template.setConnectionFactory(connectionFactory);
 		// Add some specific configuration here. Key serializers, etc.
